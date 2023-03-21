@@ -1,0 +1,9 @@
+resources:
+  - deployment.yaml
+
+namespace: default
+
+commonLabels:
+  app: logger
+
+

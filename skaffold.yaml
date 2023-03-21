@@ -1,0 +1,19 @@
+apiVersion: skaffold/v4beta1
+kind: Config
+metadata:
+  name: logger 
+build:
+  local:
+    push: true
+  artifacts:
+    - image: localhost:5000/logger
+      context: .
+      docker:
+        dockerfile: logger/Dockerfile
+manifests:
+  kustomize:
+    paths:
+      - logger/
+deploy:
+  kubectl: {}
+
